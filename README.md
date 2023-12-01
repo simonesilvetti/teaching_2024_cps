@@ -1,4 +1,4 @@
-# Lab excersises for the CPS course
+# Lab exercises for the CPS course
 
 ## Prerequisites:
 - Python 3.9
@@ -12,4 +12,4 @@ poetry install
 ```
 
 ## Documentation
-For basic documentation of Moonlight, you can check the wiki at the main repository [here](https://github.com/MoonLightSuite/moonlight/wiki)
+For basic Moonlight documentation, you can check the wiki at the main repository [here](https://github.com/MoonLightSuite/moonlight/wiki)
