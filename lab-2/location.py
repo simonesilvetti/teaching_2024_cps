@@ -1,5 +1,9 @@
 import math
 
+import matplotlib.pyplot as plt
+
+import geopy.distance
+
 
 class Location:
     def __init__(self, index, name, coordinates, trace):
@@ -33,13 +37,13 @@ class LocationDatabase:
         row = location.iloc[0]
         coordinates = row['LAT'], row['LONG']
         traces = location.apply(lambda row: (
-            row['ABSOLUTETIME'], row['NBBIKES']), axis=1)
+            row['ABS_TIME'], row['NBBIKES']), axis=1)
         values = list(traces.values)
         values.sort(key=lambda x: x[0])
         return Location(index, name, coordinates, values)
 
     def generate_from_df(self, df):
-        location_names = df_day['NAME'].unique()
+        location_names = df['NAME'].unique()
         n = 0
         for name in location_names:
             self.db.append(self.get_location_full(df, name, n))
