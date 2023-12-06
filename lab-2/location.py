@@ -8,11 +8,11 @@ import geopy.distance
 
 
 class Location:
-    def __init__(self, index, name, coordinates, trace):
+    def __init__(self, index, name, coordinates, traces):
         self.index = index
         self.name = name
         self.coordinates = coordinates
-        self.trace = trace
+        self.traces = traces
 
     def distance(self, other):
         left = self.coordinates
@@ -20,10 +20,10 @@ class Location:
         return geopy.distance.distance(left, right).m
 
     def get_trace_values(self):
-        return [[value[1]] for value in self.trace]
+        return [[value[1], value[2]] for value in self.traces]
 
     def get_trace_time(self):
-        return [value[0] for value in self.trace]
+        return [value[0] for value in self.traces]
 
     def __str__(self):
         return f"[{self.index},{self.coordinates}]"
@@ -55,7 +55,7 @@ class LocationDatabase:
         row = location.iloc[0]
         coordinates = row['LAT'], row['LONG']
         traces = location.apply(lambda row: (
-            row['ABS_TIME'], row['NBBIKES']), axis=1)
+            row['ABS_TIME'], row['NBBIKES'], row['NBEMPTYDOCKS']), axis=1)
         values = list(traces.values)
         values.sort(key=lambda x: x[0])
         return Location(index, name, coordinates, values)
@@ -90,7 +90,6 @@ class LocationDatabase:
         return [graph]
 
     def get_traces(self):
-
         return [location.get_trace_values() for location in self.db]
 
     def get_time(self):
