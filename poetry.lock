@@ -1381,6 +1381,17 @@ pure-eval = "*"
 tests = ["cython", "littleutils", "pygments", "pytest", "typeguard"]
 
 [[package]]
+name = "stochpy"
+version = "2.4"
+description = "StochPy (Stochastic modeling in Python) provides several stochastic simulation algorithms to simulate (bio)chemical systems of reactions in a stochastic manner."
+optional = false
+python-versions = "*"
+files = [
+    {file = "StochPy-2.4-py3-none-any.whl", hash = "sha256:05e352b3f26e976d9d5d9eb9a15a1f25225d42a7c8318ebe2cd63f1e865a85d1"},
+    {file = "StochPy-2.4.tar.gz", hash = "sha256:8d27edcb35e0898f3332ce78c4384e89c06d95dd0f66aadd212adf84293b21e4"},
+]
+
+[[package]]
 name = "tornado"
 version = "6.4"
 description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
@@ -1466,4 +1477,4 @@ testing = ["big-O", "jaraco.functools", "jaraco.itertools", "more-itertools", "p
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.9"
-content-hash = "2a1146f623da59cc8ec7f3cbc3eb8cf6b9eb5a5bc3dd9e38bcd75a111483afb6"
+content-hash = "5edfccd9adee872ee3f98cfa2b44be4ed93ea8f523c5fdbf2376fec715e03026"
