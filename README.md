@@ -18,13 +18,13 @@ There are two possibilities:
 
 #### 1) SDKMAN
 My suggestion is to use [SDKMAN](https://sdkman.io/install).
-After you have installed it then you just need to do:
+After you have installed it, then execute this in console:
 ```bash
 sdk install java
 ```
 More information [here](https://sdkman.io/usage). 
 #### 2) Adoptium
-You may also download the executable from [Adoptiom](https://adoptium.net/temurin/releases/?os=any) and install it. 
+You may also dlownload the executable from [Adoptiom](https://adoptium.net/temurin/releases/?os=any) and install it. 
 
 ### Windows
 You can download the JRE version from: [Adoptiom](https://adoptium.net/temurin/releases/?os=any)
